@@ -1,0 +1,74 @@
+-- Load Rayfield GUI
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+getgenv().SecureMode = true
+
+-- Create the main GUI Window
+local Window = Rayfield:CreateWindow({
+    Name = "🏆 Mm2 Multi Scripts 🏆",
+    LoadingTitle = "🕹️ Loading Mm2 Scripts...",
+    LoadingSubtitle = "Please wait...",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "YourScriptFolder",
+        FileName = "Mm2MultiScripts"
+    },
+    Discord = {
+        Enabled = false,
+        Invite = "your_invite_code", -- Replace with your Discord invite link if needed
+        RememberJoins = true
+    },
+    KeySystem = false
+})
+
+-- Column 1: Mm2 Silent Aim (YARHM)
+local Column1 = Window:CreateTab("🎯 Silent Aim")
+Column1:CreateSection("🎯 Mm2 Silent Aim (YARHM)")
+Column1:CreateLabel("🔹 Precise aim assistance for your gameplay")
+
+Column1:CreateButton({
+    Name = "Activate Silent Aim",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua", false))()
+    end
+})
+
+-- Column 2: Candy Auto Farm
+local Column2 = Window:CreateTab("🍬 Candy Farm")
+Column2:CreateSection("🍬 Candy Auto Farm")
+Column2:CreateLabel("🔹 Automatically collect candies in the game")
+
+Column2:CreateButton({
+    Name = "Start Candy Farming",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vertex-peak/vertex/refs/heads/main/loadstring"))()
+    end
+})
+
+-- Column 3: Mm2 Duper and Godly Spawner
+local Column3 = Window:CreateTab("✨ Extras")
+
+-- Mm2 Duper
+Column3:CreateSection("🔄 Mm2 Duper")
+Column3:CreateLabel("🔹 Duplicate items in the game")
+Column3:CreateButton({
+    Name = "Start Duplicating",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Neelkadam12/Mm2duper/refs/heads/main/Mm2Duper"))()
+    end
+})
+
+-- Mm2 Godly Spawner
+Column3:CreateSection("💎 Mm2 Godly Spawner")
+Column3:CreateLabel("🔹 Spawn rare godly items")
+Column3:CreateButton({
+    Name = "Spawn Godly Items",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Neelkadam12/VisualUnboxerMm2/refs/heads/main/VisualUnboxer-2.txt"))()
+    end
+})
+
+-- Credits Section
+local CreditsTab = Window:CreateTab("👤 Credits")
+CreditsTab:CreateLabel("💜 This script is made by ZyroScripts 💢")
+
+Rayfield:LoadConfiguration()
